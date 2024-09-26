@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Sidebar } from '@/components/sidebar';
+import { FollowerSideBar, Sidebar } from '@/components/sidebar';
 
 export const metadata: Metadata = {
   title: 'Social APP',
@@ -17,7 +17,8 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <main className="flex">
           <Sidebar />
-          <div className="flex-1 mx-5 min-h-screen pt-5">{children}</div>
+          <div className="flex-1 ml-5 min-h-screen pt-5 mr-5">{children}</div>
+          <FollowerSideBar />
         </main>
       </body>
     </html>
