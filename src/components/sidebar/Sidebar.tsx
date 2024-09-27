@@ -84,20 +84,26 @@ const CreatePost = () => {
 
 export const Sidebar = () => {
   return (
-    <aside className="sticky top-0 bottom-0 min-w-72 border-gray-600 border-r">
-      <div className="h-full w-full pt-5 pl-8 pr-2">
-        <div className="">
-          <SideNav label={<Camera />} />
+    <div className="min-h-(calc(100vh-100px)] min-w-72 border-r">
+      <aside className="sticky top-0 border-gray-600">
+        <div className="h-full w-full pt-5 pl-8 pr-2">
+          <div className="">
+            <SideNav label={<Camera />} />
+          </div>
+          <div className="flex flex-col justify-center">
+            <SideNav label="Home" icon={<Home />} url="/" />
+            <SideNav label="Explore" icon={<Compass />} url="/explore" />
+            <SideNav
+              label="Notifications"
+              icon={<Bell />}
+              url="/notifications"
+            />
+            <SideNav label="Message" icon={<Mail />} url="/message" />
+            <SideNav label="Profile" icon={<User />} url="/profile" />
+          </div>
+          <CreatePost />
         </div>
-        <div className="flex flex-col justify-center">
-          <SideNav label="Home" icon={<Home />} url="/" />
-          <SideNav label="Explore" icon={<Compass />} url="/explore" />
-          <SideNav label="Notifications" icon={<Bell />} url="/notifications" />
-          <SideNav label="Message" icon={<Mail />} url="/message" />
-          <SideNav label="Profile" icon={<User />} url="/profile" />
-        </div>
-        <CreatePost />
-      </div>
-    </aside>
+      </aside>
+    </div>
   );
 };
