@@ -12,8 +12,8 @@ export const FollowerSideBar = () => {
           <div className="grid grid-cols-1 space-y-5 mt-5 overflow-y-auto h-[calc(100vh-100px)]">
             {Array(50)
               .fill(null)
-              .map((item) => (
-                <Link className="" href={'/'} key={item}>
+              .map((item, i) => (
+                <Link className="" href={'/'} key={i}>
                   <div className="flex items-center gap-2">
                     <div className="relative w-10 h-10">
                       <Image
@@ -23,9 +23,9 @@ export const FollowerSideBar = () => {
                         fill
                       />
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 capitalize">
                       <div className="flex flex-col">
-                        <p>Saeful Barkah</p>
+                        <p className="font-semibold">Saeful Barkah</p>
                         <p>39K followers</p>
                       </div>
                     </div>

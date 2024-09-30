@@ -10,8 +10,8 @@ export const UserPosts = () => {
     <div className="grid grid-cols-1 space-y-5">
       {Array(10)
         .fill(null)
-        .map((item) => (
-          <Link href={'/'} className="group" key={item}>
+        .map((item, i) => (
+          <Link href={'/'} className="group" key={i}>
             <Card className="group-hover:bg-gray-200/10">
               <CardHeader className="p-5">
                 <div className="flex items-center gap-2 text-lg">

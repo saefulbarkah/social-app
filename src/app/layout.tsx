@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { FollowerSideBar, Sidebar } from '@/components/sidebar';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: 'Social APP',
@@ -15,9 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
+        <Toaster />
         <main className="flex">
           <Sidebar />
-          <div className="flex-1 ml-5 min-h-screen pt-5 mr-5">{children}</div>
+          <div className="flex-1 ml-5 min-h-screen py-5 mr-5">{children}</div>
           <FollowerSideBar />
         </main>
       </body>
