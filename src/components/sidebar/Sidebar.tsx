@@ -14,6 +14,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '../ui/alert-dialog';
+import { CreateFormPost } from '../form/post';
 
 interface NavigationItem extends ButtonProps {
   label?: string | React.ReactNode;
@@ -60,14 +61,7 @@ const CreatePost = () => {
           <AlertDialogHeader>
             <AlertDialogTitle>Create Post</AlertDialogTitle>
           </AlertDialogHeader>
-          <div className="">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores illum, voluptas, praesentium culpa deserunt eum dicta
-              excepturi, autem libero nam est. Provident blanditiis aliquid
-              culpa porro quasi? Alias, aut eius.
-            </p>
-          </div>
+          <CreateFormPost />
           <AlertDialogCancel
             className="fixed top-0 right-0 -translate-x-4 translate-y-2 border-none"
             asChild
