@@ -7,13 +7,17 @@ export const FollowerSideBar = () => {
   return (
     <div className="min-h-[calc(100vh-70px)] w-[25rem] border-l">
       <aside className="sticky top-0 right-0 bottom-0">
-        <div className="py-5 pl-5 pr-2 h-full w-full">
-          <h3 className="text-2xl font-semibold">Followers</h3>
-          <div className="grid grid-cols-1 space-y-5 mt-5 overflow-y-auto h-[calc(100vh-100px)]">
+        <div className="py-5 h-full w-full">
+          <h3 className="text-2xl font-semibold px-4">Followers</h3>
+          <div className="grid grid-cols-1 mt-5 overflow-y-auto h-[calc(100vh-100px)]">
             {Array(50)
               .fill(null)
               .map((item, i) => (
-                <Link className="" href={'/'} key={i}>
+                <Link
+                  className="hover:bg-slate-50 px-4 py-2"
+                  href={'/'}
+                  key={i}
+                >
                   <div className="flex items-center gap-2">
                     <div className="relative w-10 h-10">
                       <Image
