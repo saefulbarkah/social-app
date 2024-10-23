@@ -7,6 +7,11 @@ import React from 'react';
 
 export const UserPosts = () => {
   const router = useRouter();
+  const images = [
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+  ];
   return (
     <div className="grid grid-cols-1">
       {Array(10)
@@ -45,6 +50,58 @@ export const UserPosts = () => {
                     necessitatibus numquam, perspiciatis inventore autem,
                     blanditiis voluptatem in obcaecati vero molestias. Quibusdam
                     cumque sapiente et?
+                  </div>
+                  {/* IMages */}
+                  <div>
+                    {images.length === 1 && (
+                      <div className="grid grid-cols-1 w-full h-full">
+                        <Image
+                          key={i}
+                          src={images[0]}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          alt="test"
+                          className="bg-center w-full h-full"
+                        />
+                      </div>
+                    )}
+
+                    {images.length === 2 && (
+                      <div className="grid grid-cols-2 w-full h-full">
+                        {images.map((item, i) => (
+                          <Image
+                            key={i}
+                            src={item}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            alt="test"
+                            className="bg-center w-full h-full"
+                          />
+                        ))}
+                      </div>
+                    )}
+
+                    {images.length === 3 && (
+                      <div className="grid grid-cols-2 w-full gap-[2px]">
+                        {images.map((item, i) => (
+                          <div
+                            key={i}
+                            className={`relative aspect-video ${
+                              i === 0 ? 'col-span-2' : ''
+                            }`}
+                          >
+                            <Image
+                              src={item}
+                              fill
+                              alt="test"
+                              className="bg-center object-cover rounded"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   {/* actions */}
                   <div className="flex justify-between pt-2 pb-1">
