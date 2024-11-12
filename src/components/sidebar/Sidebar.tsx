@@ -78,7 +78,7 @@ const CreatePost = () => {
 
 export const Sidebar = () => {
   return (
-    <div className="min-h-(calc(100vh-100px)] min-w-72 border-r">
+    <div className="min-h-(calc(100vh-100px)] min-w-72 border-r hidden sm:inline-block">
       <aside className="sticky top-0 border-gray-600">
         <div className="h-full w-full pt-5 pl-8 pr-2">
           <div className="">

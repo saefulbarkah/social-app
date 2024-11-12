@@ -11,7 +11,12 @@ export const UserPosts = () => {
     'https://picsum.photos/1920/1080',
     'https://picsum.photos/1920/1080',
     'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
   ];
+
+  const maxImagesShow = images.slice(0, 4);
+
   return (
     <div className="grid grid-cols-1">
       {Array(10)
@@ -98,6 +103,50 @@ export const UserPosts = () => {
                               alt="test"
                               className="bg-center object-cover rounded"
                             />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {images.length === 4 && (
+                      <>
+                        <div className="grid grid-cols-2 w-full gap-[1px]">
+                          {images.map((item, i) => (
+                            <div key={i} className={`relative aspect-video`}>
+                              <Image
+                                src={item}
+                                fill
+                                alt="test"
+                                className="bg-center object-cover rounded"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    )}
+
+                    {images.length > 4 && (
+                      <div className="grid grid-cols-2 w-full h-full gap-[1px]">
+                        {maxImagesShow.map((item, i) => (
+                          <div className="relative" key={i}>
+                            <Image
+                              src={item}
+                              width={0}
+                              height={0}
+                              sizes="100vw"
+                              alt="test"
+                              className="bg-center w-full h-full"
+                            />
+
+                            {/* Display the badge on the last image */}
+                            {i === maxImagesShow.length - 1 &&
+                              images.length > maxImagesShow.length && (
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                  <span className="text-white text-xl font-bold">
+                                    +{images.length - maxImagesShow.length}
+                                  </span>
+                                </div>
+                              )}
                           </div>
                         ))}
                       </div>
